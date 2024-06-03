@@ -1,0 +1,174 @@
+[versions]
+activity-compose = "1.8.2"
+androidx-browser = "1.7.0"
+androidx-test-ext-junit = "1.1.5"
+build-config = "5.3.5"
+coil = "3.0.0-alpha06"
+compose-bom = "2023.10.01"
+compose-plugin = "1.6.1"
+decompose = "3.0.0"
+dependency-analysis = "1.22.0"
+detekt = "1.23.4"
+espresso-core = "3.5.1"
+essenty = "2.0.0"
+koalaplot = "0.6.0"
+kotlinx-coroutines = "1.8.0"
+kotlinx-datetime = "0.6.0"
+kotlinx-serialization = "1.6.2"
+junit = "4.13.2"
+koin = "3.5.3"
+koin-compose = "1.1.2"
+ktor = "2.3.7"
+material = "1.11.0"
+mockito = "5.9.0"
+mockito-kotlin = "5.2.1"
+mvikotlin = "3.3.0"
+paging = "3.3.0-alpha02-0.5.1"
+realm = "1.13.0"
+security-crypto = "1.1.0-alpha06"
+shimmer = "1.2.0"
+vico = "2.0.0-alpha.4"
+ycharts = "2.1.0"
+
+firebase-analytics = "21.5.0"
+firebase-crashlytics = "18.6.1"
+firebase-crashlytics-plugin = "2.9.9"
+firebase-messaging = "23.4.0"
+firebase-performance = "20.5.1"
+firebase-performance-plugin = "1.4.2"
+gms-googleServices = "4.4.0"
+
+compose-compiler-extension = "1.5.13"
+
+version-name = "1.0"
+version-code = "1"
+
+agp = "8.2.2"
+jvm-target = "11"
+kotlin = "1.9.23"
+
+android-minSdk = "27"
+android-targetSdk = "34"
+android-compileSdk = "34"
+
+[libraries]
+
+#AndroidX
+browser = { group = "androidx.browser", name = "browser", version.ref = "androidx-browser" }
+security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "security-crypto" }
+
+# Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+material3 = { group = "androidx.compose.material3", name = "material3" }
+material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+
+# Compose
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android" }
+
+# Coil
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil" }
+
+# Decompose
+decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
+decompose-extensions = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
+
+# MVI Kotlin
+mvikotlin = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mvikotlin" }
+mvikotlin-rx = { group = "com.arkivanov.mvikotlin", name = "rx", version.ref = "mvikotlin" }
+mvikotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mvikotlin" }
+mvikotlin-extensions-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mvikotlin" }
+
+# Essenty
+essenty-lifecycle = { group = "com.arkivanov.essenty", name = "lifecycle", version.ref = "essenty" }
+
+# Koin
+koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin-compose" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
+
+# Realm
+realm = { group = "io.realm.kotlin", name = "library-base", version.ref = "realm" }
+
+# Ktor
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# KotlinX
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# Charts
+koalaplot = { group = "io.github.koalaplot", name = "koalaplot-core", version.ref = "koalaplot" }
+
+# Paging
+paging-runtime = { group = "app.cash.paging", name = "paging-common", version.ref = "paging" }
+paging-compose = { group = "app.cash.paging", name = "paging-compose-common", version.ref = "paging" }
+paging-uikit = { group = "app.cash.paging", name = "paging-runtime-uikit", version.ref = "paging" }
+
+# Shimmer
+shimmer = { group = "com.valentinilk.shimmer", name = "compose-shimmer", version.ref = "shimmer" }
+
+# Firebase
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebase-analytics" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebase-crashlytics" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebase-messaging" }
+firebase-performance = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebase-performance" }
+
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+
+# Test
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+
+[plugins]
+
+# Android
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+
+# BuildConfig
+build-config = { id = "com.github.gmazzo.buildconfig", version.ref = "build-config" }
+
+# Compose
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+
+# Kotlin
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# Realm
+realm = { id = "io.realm.kotlin", version.ref = "realm" }
+
+# Firebase
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin" }
+firebase-performance = { id = "com.google.firebase.firebase-perf", version.ref = "firebase-performance-plugin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gms-googleServices" }
+
+# Analysis
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependency-analysis" }
+
+[bundles]
+

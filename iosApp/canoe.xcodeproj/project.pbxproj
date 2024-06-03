@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A038A722C06828100376F0E /* ComponentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A712C06828100376F0E /* ComponentHolder.swift */; };
+		4A038A742C0682A400376F0E /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A732C0682A400376F0E /* ObservableValue.swift */; };
+		4A038A772C06853000376F0E /* IosLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A762C06853000376F0E /* IosLinkHandler.swift */; };
+		4A038A7F2C06871000376F0E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A7E2C06871000376F0E /* RootView.swift */; };
+		4A038A812C07280300376F0E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A802C07280300376F0E /* DashboardView.swift */; };
+		4A038A832C07286200376F0E /* LeaderboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A822C07286200376F0E /* LeaderboardsView.swift */; };
+		4A038A852C0728C500376F0E /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A842C0728C500376F0E /* ProjectsView.swift */; };
+		4A038A872C07291800376F0E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038A862C07291800376F0E /* SettingsView.swift */; };
+		4A17DF202C0BA572000021A6 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A17DF1F2C0BA572000021A6 /* CachedAsyncImage */; };
+		4A17DF232C0CA14E000021A6 /* DailyChartEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF222C0CA14E000021A6 /* DailyChartEntry.swift */; };
+		4A17DF252C0CA192000021A6 /* DailyChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF242C0CA192000021A6 /* DailyChartModel.swift */; };
+		4A17DF272C0CDCF5000021A6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF262C0CDCF5000021A6 /* Color.swift */; };
+		4A17DF292C0D0F68000021A6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF282C0D0F68000021A6 /* String.swift */; };
+		4A17DF2B2C0D11DD000021A6 /* ProgramLanguageEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF2A2C0D11DD000021A6 /* ProgramLanguageEntry.swift */; };
+		4A17DF2D2C0D11FD000021A6 /* ProgramLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF2C2C0D11FD000021A6 /* ProgramLanguageModel.swift */; };
+		4A17DF302C0D1979000021A6 /* GenericUsageEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF2F2C0D1979000021A6 /* GenericUsageEntry.swift */; };
+		4A17DF332C0D19AC000021A6 /* GenericUsageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17DF322C0D19AC000021A6 /* GenericUsageModel.swift */; };
+		4A8684A12C08E0380047A5E9 /* ProjectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8684A02C08E0380047A5E9 /* ProjectsListView.swift */; };
+		4A8684A32C08E1260047A5E9 /* StateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8684A22C08E1260047A5E9 /* StateValue.swift */; };
+		4A8684A62C08E18D0047A5E9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8684A52C08E18D0047A5E9 /* ErrorView.swift */; };
+		4A8684A92C08E1BF0047A5E9 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8684A82C08E1BF0047A5E9 /* LoaderView.swift */; };
+		4A8684AB2C08E1CD0047A5E9 /* NavigationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8684AA2C08E1CD0047A5E9 /* NavigationWrapper.swift */; };
+		4AC6E35F2C0657CD00DF1BE2 /* CanoeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6E35E2C0657CD00DF1BE2 /* CanoeApp.swift */; };
+		4AC6E3612C0657CD00DF1BE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6E3602C0657CD00DF1BE2 /* ContentView.swift */; };
+		4AC6E3632C0657CF00DF1BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E3622C0657CF00DF1BE2 /* Assets.xcassets */; };
+		4AC6E3662C0657CF00DF1BE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6E3652C0657CF00DF1BE2 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A038A712C06828100376F0E /* ComponentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHolder.swift; sourceTree = "<group>"; };
+		4A038A732C0682A400376F0E /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
+		4A038A762C06853000376F0E /* IosLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosLinkHandler.swift; sourceTree = "<group>"; };
+		4A038A7E2C06871000376F0E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4A038A802C07280300376F0E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		4A038A822C07286200376F0E /* LeaderboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsView.swift; sourceTree = "<group>"; };
+		4A038A842C0728C500376F0E /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		4A038A862C07291800376F0E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4A17DF222C0CA14E000021A6 /* DailyChartEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartEntry.swift; sourceTree = "<group>"; };
+		4A17DF242C0CA192000021A6 /* DailyChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartModel.swift; sourceTree = "<group>"; };
+		4A17DF262C0CDCF5000021A6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4A17DF282C0D0F68000021A6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4A17DF2A2C0D11DD000021A6 /* ProgramLanguageEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramLanguageEntry.swift; sourceTree = "<group>"; };
+		4A17DF2C2C0D11FD000021A6 /* ProgramLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramLanguageModel.swift; sourceTree = "<group>"; };
+		4A17DF2F2C0D1979000021A6 /* GenericUsageEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericUsageEntry.swift; sourceTree = "<group>"; };
+		4A17DF322C0D19AC000021A6 /* GenericUsageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericUsageModel.swift; sourceTree = "<group>"; };
+		4A745A762C065B8900B6AE06 /* CanoeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CanoeKit.framework; path = "../shared/build/xcode-frameworks/Debug/iphonesimulator17.4/CanoeKit.framework"; sourceTree = "<group>"; };
+		4A8684A02C08E0380047A5E9 /* ProjectsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListView.swift; sourceTree = "<group>"; };
+		4A8684A22C08E1260047A5E9 /* StateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValue.swift; sourceTree = "<group>"; };
+		4A8684A52C08E18D0047A5E9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4A8684A82C08E1BF0047A5E9 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		4A8684AA2C08E1CD0047A5E9 /* NavigationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWrapper.swift; sourceTree = "<group>"; };
+		4A8684AC2C0921600047A5E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4AC6E35B2C0657CD00DF1BE2 /* canoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC6E35E2C0657CD00DF1BE2 /* CanoeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoeApp.swift; sourceTree = "<group>"; };
+		4AC6E3602C0657CD00DF1BE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AC6E3622C0657CF00DF1BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AC6E3652C0657CF00DF1BE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AC6E3582C0657CD00DF1BE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A17DF202C0BA572000021A6 /* CachedAsyncImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A038A752C06852300376F0E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A762C06853000376F0E /* IosLinkHandler.swift */,
+				4A8684A22C08E1260047A5E9 /* StateValue.swift */,
+				4A17DF262C0CDCF5000021A6 /* Color.swift */,
+				4A17DF282C0D0F68000021A6 /* String.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		4A038A782C0686AA00376F0E /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A7A2C0686D800376F0E /* dashboard */,
+				4A038A7B2C0686DD00376F0E /* leaderboards */,
+				4A038A7C2C0686E200376F0E /* projects */,
+				4A038A792C0686BD00376F0E /* root */,
+				4A038A7D2C0686E900376F0E /* settings */,
+				4A8684A42C08E17C0047A5E9 /* views */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		4A038A792C0686BD00376F0E /* root */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A7E2C06871000376F0E /* RootView.swift */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		4A038A7A2C0686D800376F0E /* dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A802C07280300376F0E /* DashboardView.swift */,
+			);
+			path = dashboard;
+			sourceTree = "<group>";
+		};
+		4A038A7B2C0686DD00376F0E /* leaderboards */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A822C07286200376F0E /* LeaderboardsView.swift */,
+			);
+			path = leaderboards;
+			sourceTree = "<group>";
+		};
+		4A038A7C2C0686E200376F0E /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				4A8684A02C08E0380047A5E9 /* ProjectsListView.swift */,
+				4A038A842C0728C500376F0E /* ProjectsView.swift */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		4A038A7D2C0686E900376F0E /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				4A038A862C07291800376F0E /* SettingsView.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		4A17DF212C0CA138000021A6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4A17DF222C0CA14E000021A6 /* DailyChartEntry.swift */,
+				4A17DF242C0CA192000021A6 /* DailyChartModel.swift */,
+				4A17DF2A2C0D11DD000021A6 /* ProgramLanguageEntry.swift */,
+				4A17DF2C2C0D11FD000021A6 /* ProgramLanguageModel.swift */,
+				4A17DF2F2C0D1979000021A6 /* GenericUsageEntry.swift */,
+				4A17DF322C0D19AC000021A6 /* GenericUsageModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		4A745A752C065B8900B6AE06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A745A762C065B8900B6AE06 /* CanoeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A8684A42C08E17C0047A5E9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4A8684A52C08E18D0047A5E9 /* ErrorView.swift */,
+				4A8684A82C08E1BF0047A5E9 /* LoaderView.swift */,
+				4A8684AA2C08E1CD0047A5E9 /* NavigationWrapper.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		4AC6E3522C0657CD00DF1BE2 = {
+			isa = PBXGroup;
+			children = (
+				4AC6E35D2C0657CD00DF1BE2 /* canoe */,
+				4AC6E35C2C0657CD00DF1BE2 /* Products */,
+				4A745A752C065B8900B6AE06 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4AC6E35C2C0657CD00DF1BE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AC6E35B2C0657CD00DF1BE2 /* canoe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AC6E35D2C0657CD00DF1BE2 /* canoe */ = {
+			isa = PBXGroup;
+			children = (
+				4AC6E3622C0657CF00DF1BE2 /* Assets.xcassets */,
+				4AC6E35E2C0657CD00DF1BE2 /* CanoeApp.swift */,
+				4A038A712C06828100376F0E /* ComponentHolder.swift */,
+				4AC6E3602C0657CD00DF1BE2 /* ContentView.swift */,
+				4A8684AC2C0921600047A5E9 /* Info.plist */,
+				4A17DF212C0CA138000021A6 /* models */,
+				4A038A732C0682A400376F0E /* ObservableValue.swift */,
+				4AC6E3642C0657CF00DF1BE2 /* Preview Content */,
+				4A038A782C0686AA00376F0E /* ui */,
+				4A038A752C06852300376F0E /* utils */,
+			);
+			path = canoe;
+			sourceTree = "<group>";
+		};
+		4AC6E3642C0657CF00DF1BE2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AC6E3652C0657CF00DF1BE2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AC6E35A2C0657CD00DF1BE2 /* canoe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AC6E3692C0657CF00DF1BE2 /* Build configuration list for PBXNativeTarget "canoe" */;
+			buildPhases = (
+				4A57A0252C0658440022EE8D /* Compile Kotlin Framework */,
+				4AC6E3572C0657CD00DF1BE2 /* Sources */,
+				4AC6E3582C0657CD00DF1BE2 /* Frameworks */,
+				4AC6E3592C0657CD00DF1BE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = canoe;
+			packageProductDependencies = (
+				4A17DF1F2C0BA572000021A6 /* CachedAsyncImage */,
+			);
+			productName = canoe;
+			productReference = 4AC6E35B2C0657CD00DF1BE2 /* canoe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AC6E3532C0657CD00DF1BE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					4AC6E35A2C0657CD00DF1BE2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 4AC6E3562C0657CD00DF1BE2 /* Build configuration list for PBXProject "canoe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AC6E3522C0657CD00DF1BE2;
+			packageReferences = (
+				4A17DF1E2C0BA572000021A6 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
+			productRefGroup = 4AC6E35C2C0657CD00DF1BE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AC6E35A2C0657CD00DF1BE2 /* canoe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AC6E3592C0657CD00DF1BE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AC6E3662C0657CF00DF1BE2 /* Preview Assets.xcassets in Resources */,
+				4AC6E3632C0657CF00DF1BE2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A57A0252C0658440022EE8D /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AC6E3572C0657CD00DF1BE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A17DF292C0D0F68000021A6 /* String.swift in Sources */,
+				4AC6E3612C0657CD00DF1BE2 /* ContentView.swift in Sources */,
+				4A8684A32C08E1260047A5E9 /* StateValue.swift in Sources */,
+				4A038A722C06828100376F0E /* ComponentHolder.swift in Sources */,
+				4A8684A92C08E1BF0047A5E9 /* LoaderView.swift in Sources */,
+				4A038A7F2C06871000376F0E /* RootView.swift in Sources */,
+				4A038A812C07280300376F0E /* DashboardView.swift in Sources */,
+				4A17DF302C0D1979000021A6 /* GenericUsageEntry.swift in Sources */,
+				4A17DF252C0CA192000021A6 /* DailyChartModel.swift in Sources */,
+				4A8684A12C08E0380047A5E9 /* ProjectsListView.swift in Sources */,
+				4A17DF232C0CA14E000021A6 /* DailyChartEntry.swift in Sources */,
+				4A17DF2D2C0D11FD000021A6 /* ProgramLanguageModel.swift in Sources */,
+				4A038A832C07286200376F0E /* LeaderboardsView.swift in Sources */,
+				4A038A872C07291800376F0E /* SettingsView.swift in Sources */,
+				4A038A772C06853000376F0E /* IosLinkHandler.swift in Sources */,
+				4A038A852C0728C500376F0E /* ProjectsView.swift in Sources */,
+				4A038A742C0682A400376F0E /* ObservableValue.swift in Sources */,
+				4A8684AB2C08E1CD0047A5E9 /* NavigationWrapper.swift in Sources */,
+				4A17DF332C0D19AC000021A6 /* GenericUsageModel.swift in Sources */,
+				4A8684A62C08E18D0047A5E9 /* ErrorView.swift in Sources */,
+				4AC6E35F2C0657CD00DF1BE2 /* CanoeApp.swift in Sources */,
+				4A17DF272C0CDCF5000021A6 /* Color.swift in Sources */,
+				4A17DF2B2C0D11DD000021A6 /* ProgramLanguageEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4AC6E3672C0657CF00DF1BE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AC6E3682C0657CF00DF1BE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AC6E36A2C0657CF00DF1BE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"canoe/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = canoe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Canoe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					canoekit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voxeldev.canoe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AC6E36B2C0657CF00DF1BE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"canoe/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = canoe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Canoe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					canoekit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voxeldev.canoe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AC6E3562C0657CD00DF1BE2 /* Build configuration list for PBXProject "canoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC6E3672C0657CF00DF1BE2 /* Debug */,
+				4AC6E3682C0657CF00DF1BE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AC6E3692C0657CF00DF1BE2 /* Build configuration list for PBXNativeTarget "canoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC6E36A2C0657CF00DF1BE2 /* Debug */,
+				4AC6E36B2C0657CF00DF1BE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A17DF1E2C0BA572000021A6 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A17DF1F2C0BA572000021A6 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A17DF1E2C0BA572000021A6 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4AC6E3532C0657CD00DF1BE2 /* Project object */;
+}
