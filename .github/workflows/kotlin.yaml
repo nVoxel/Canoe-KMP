@@ -1,11 +1,11 @@
-name: detekt
+name: Kotlin workflow
 
 on:
   pull_request:
     branches: [ "master", "main" ]
 
 jobs:
-  dependencies_detekt:
+  detekt:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,7 @@ jobs:
       - name: Create secrets.properties
         env:
           DATA: ${{secrets.SECRETS_PROPERTIES}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/secrets.properties
+        run: echo $DATA > secrets.properties
       - name: Download dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew androidDependencies
