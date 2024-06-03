@@ -67,6 +67,10 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Create google-services.json
+        env:
+          DATA: ${{secrets.GOOGLE_SERVICES_JSON}}
+        run: echo $DATA > composeApp/google-services.json
       - name: Create secrets.properties
         env:
           DATA: ${{secrets.SECRETS_PROPERTIES}}
