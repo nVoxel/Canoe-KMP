@@ -18,6 +18,8 @@ import com.voxeldev.canoe.leaderboards.paging.LeaderboardsPagingSource.Companion
 import com.voxeldev.canoe.leaderboards.paging.LeaderboardsPagingSource.Companion.PAGING_PAGE_SIZE
 import com.voxeldev.canoe.leaderboards.store.LeaderboardsStore.Intent
 import com.voxeldev.canoe.leaderboards.store.LeaderboardsStore.State
+import com.voxeldev.canoe.utils.analytics.CommonAnalytics
+import com.voxeldev.canoe.utils.analytics.CustomEvent
 import com.voxeldev.canoe.utils.extensions.getMessage
 import kotlinx.coroutines.flow.Flow
 
@@ -26,7 +28,7 @@ import kotlinx.coroutines.flow.Flow
  */
 internal class LeaderboardsStoreProvider(
     private val storeFactory: StoreFactory,
-    // private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics,
+    private val commonAnalytics: CommonAnalytics,
     private val getLeaderboardsAsyncUseCase: GetLeaderboardsAsyncUseCase = GetLeaderboardsAsyncUseCase(),
 ) {
 
@@ -95,7 +97,6 @@ internal class LeaderboardsStoreProvider(
         }
 
         private fun loadLeaderboards(state: State, resetPage: Boolean = true) {
-            // val trace = Firebase.performance.startTrace(trace = CustomTrace.LeaderboardsLoadTrace)
             if (resetPage) {
                 dispatch(message = Msg.LeaderboardsLoading)
             }
@@ -107,7 +108,10 @@ internal class LeaderboardsStoreProvider(
                 result
                     .fold(
                         onSuccess = { loadedLeaderboards ->
-                            // firebaseAnalytics.logEvent(event = CustomEvent.LoadedLeaderboards)
+                            if (resetPage) {
+                                commonAnalytics.logEvent(event = CustomEvent.LoadedLeaderboards)
+                            }
+
                             dispatch(
                                 message = Msg.LeaderboardsLoaded(
                                     leaderboardsModel = if (resetPage || state.leaderboardsModel == null) {
@@ -124,7 +128,6 @@ internal class LeaderboardsStoreProvider(
                         },
                         onFailure = { dispatch(message = Msg.Error(message = it.getMessage())) },
                     )
-                // .also { trace.stop() }
             }
         }
 

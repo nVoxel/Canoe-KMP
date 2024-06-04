@@ -42,7 +42,6 @@ kotlin {
             implementation(libs.koin)
 
             implementation(libs.firebase.analytics)
-            implementation(libs.firebase.performance)
         }
     }
 }

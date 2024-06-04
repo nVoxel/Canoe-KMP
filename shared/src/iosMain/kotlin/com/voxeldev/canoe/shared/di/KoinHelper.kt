@@ -12,7 +12,7 @@ import org.koin.core.logger.MESSAGE
 /**
  * @author nvoxel
  */
-fun initKoin() {
+fun initKoin(dependencies: IosDependencies) {
     startKoin {
         logger(object : Logger() {
             override fun display(level: Level, msg: MESSAGE) {
@@ -21,5 +21,7 @@ fun initKoin() {
         })
 
         modules(dashboardFeatureModule, leaderboardsFeatureModule, projectsFeatureModule, settingsFeatureModule)
+
+        modules(getIosUtilsModule(iosDependencies = dependencies))
     }
 }

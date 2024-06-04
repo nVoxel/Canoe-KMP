@@ -10,6 +10,8 @@ import com.voxeldev.canoe.projects.api.ProjectsRequest
 import com.voxeldev.canoe.projects.integration.GetProjectsUseCase
 import com.voxeldev.canoe.projects.list.ProjectsListStore.Intent
 import com.voxeldev.canoe.projects.list.ProjectsListStore.State
+import com.voxeldev.canoe.utils.analytics.CommonAnalytics
+import com.voxeldev.canoe.utils.analytics.CustomEvent
 import com.voxeldev.canoe.utils.extensions.getMessage
 
 /**
@@ -17,7 +19,7 @@ import com.voxeldev.canoe.utils.extensions.getMessage
  */
 internal class ProjectsListStoreProvider(
     private val storeFactory: StoreFactory,
-    // private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics,
+    private val commonAnalytics: CommonAnalytics,
     private val getProjectsUseCase: GetProjectsUseCase = GetProjectsUseCase(),
 ) {
 
@@ -53,18 +55,16 @@ internal class ProjectsListStoreProvider(
         }
 
         private fun loadProjects(params: ProjectsRequest) {
-            // val trace = Firebase.performance.startTrace(trace = CustomTrace.ProjectsLoadTrace)
             dispatch(message = Msg.ProjectsListLoading)
             getProjectsUseCase(params = params, scope = scope) { result ->
                 result
                     .fold(
                         onSuccess = {
-                            // firebaseAnalytics.logEvent(event = CustomEvent.LoadedProjects)
+                            commonAnalytics.logEvent(event = CustomEvent.LoadedProjects)
                             dispatch(message = Msg.ProjectsListLoaded(projectsModel = it))
                         },
                         onFailure = { dispatch(message = Msg.Error(message = it.getMessage())) },
                     )
-                // .also { trace.stop() }
             }
         }
     }
