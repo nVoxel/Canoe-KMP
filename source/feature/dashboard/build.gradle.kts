@@ -31,9 +31,6 @@ kotlin {
             implementation(libs.koin.core)
 
             implementation(libs.kotlinx.datetime)
-
-            /*implementation(libs.firebase.analytics)
-            implementation(libs.firebase.performance)*/
         }
     }
 }

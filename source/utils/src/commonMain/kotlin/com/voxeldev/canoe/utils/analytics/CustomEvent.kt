@@ -1,9 +1,5 @@
 package com.voxeldev.canoe.utils.analytics
 
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ParametersBuilder
-import com.google.firebase.analytics.logEvent
-
 /**
  * @author nvoxel
  */
@@ -19,8 +15,3 @@ sealed class CustomEvent(
     data object Login : CustomEvent(name = "login")
     data object Logout : CustomEvent(name = "logout")
 }
-
-fun FirebaseAnalytics.logEvent(
-    event: CustomEvent,
-    block: ParametersBuilder.() -> Unit = {},
-) = logEvent(name = event.name, block = block)

@@ -15,6 +15,8 @@ import com.voxeldev.canoe.dashboard.integration.GetProgramLanguagesUseCase
 import com.voxeldev.canoe.dashboard.integration.GetSummariesUseCase
 import com.voxeldev.canoe.dashboard.store.DashboardStore.Intent
 import com.voxeldev.canoe.dashboard.store.DashboardStore.State
+import com.voxeldev.canoe.utils.analytics.CommonAnalytics
+import com.voxeldev.canoe.utils.analytics.CustomEvent
 import com.voxeldev.canoe.utils.extensions.getMessage
 import com.voxeldev.canoe.utils.integration.BaseUseCase
 import kotlinx.datetime.Instant
@@ -28,7 +30,7 @@ import kotlinx.datetime.format.char
 internal class DashboardStoreProvider(
     private val projectName: String?,
     private val storeFactory: StoreFactory,
-    // private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics,
+    private val commonAnalytics: CommonAnalytics,
     private val getProgramLanguagesUseCase: GetProgramLanguagesUseCase = GetProgramLanguagesUseCase(),
     private val getSummariesUseCase: GetSummariesUseCase = GetSummariesUseCase(),
     private val getAllTimeUseCase: GetAllTimeUseCase = GetAllTimeUseCase(),
@@ -119,48 +121,43 @@ internal class DashboardStoreProvider(
         }
 
         private fun loadDashboard(params: SummariesRequest) {
-            // val summariesTrace = Firebase.performance.startTrace(trace = CustomTrace.SummariesLoadTrace)
             dispatch(message = Msg.SummariesLoading)
             getSummariesUseCase(params = params, scope = scope) { result ->
                 result
                     .fold(
                         onSuccess = {
-                            // firebaseAnalytics.logEvent(event = CustomEvent.LoadedSummaries)
+                            commonAnalytics.logEvent(event = CustomEvent.LoadedSummaries)
                             dispatch(message = Msg.SummariesLoaded(summariesModel = it))
                         },
                         onFailure = { dispatch(message = Msg.SummariesError(message = it.getMessage())) },
                     )
-                // .also { summariesTrace.stop() }
             }
 
-            // val programLanguagesTrace = Firebase.performance.startTrace(trace = CustomTrace.ProgramLanguagesLoadTrace)
             dispatch(message = Msg.ProgramLanguagesLoading)
             getProgramLanguagesUseCase(params = BaseUseCase.NoParams) { result ->
                 result
                     .fold(
                         onSuccess = {
-                            // firebaseAnalytics.logEvent(event = CustomEvent.LoadedProgramLanguages)
+                            commonAnalytics.logEvent(event = CustomEvent.LoadedProgramLanguages)
                             dispatch(message = Msg.ProgramLanguagesLoaded(programLanguagesModel = it))
                         },
                         onFailure = {
                             dispatch(message = Msg.ProgramLanguagesError(message = it.getMessage()))
                         },
                     )
-                // .also { programLanguagesTrace.stop() }
             }
 
-            // val allTimeTrace = Firebase.performance.startTrace(trace = CustomTrace.AllTimeLoadTrace)
             dispatch(message = Msg.AllTimeLoading)
             getAllTimeUseCase(params = getAllTimeRequest()) { result ->
                 result.fold(
                     onSuccess = {
-                        // firebaseAnalytics.logEvent(event = CustomEvent.LoadedAllTime)
+                        commonAnalytics.logEvent(event = CustomEvent.LoadedAllTime)
                         dispatch(message = Msg.AllTimeLoaded(allTimeModel = it))
                     },
                     onFailure = {
                         dispatch(message = Msg.AllTimeError(message = it.getMessage()))
                     },
-                ) // .also { allTimeTrace.stop() }
+                )
             }
         }
 

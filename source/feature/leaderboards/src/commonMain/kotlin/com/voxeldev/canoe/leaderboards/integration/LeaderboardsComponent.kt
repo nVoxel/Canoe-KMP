@@ -10,6 +10,8 @@ import com.voxeldev.canoe.leaderboards.Leaderboards.Output
 import com.voxeldev.canoe.leaderboards.store.LeaderboardsStore
 import com.voxeldev.canoe.leaderboards.store.LeaderboardsStoreProvider
 import com.voxeldev.canoe.utils.extensions.asValue
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 
 /**
  * @author nvoxel
@@ -18,12 +20,12 @@ class LeaderboardsComponent(
     componentContext: ComponentContext,
     storeFactory: StoreFactory,
     private val output: (Output) -> Unit,
-) : Leaderboards, ComponentContext by componentContext {
+) : Leaderboards, KoinComponent, ComponentContext by componentContext {
 
     private val stateMapper: StateMapper = StateMapper()
 
     private val store = instanceKeeper.getStore {
-        LeaderboardsStoreProvider(storeFactory = storeFactory).provide()
+        LeaderboardsStoreProvider(storeFactory = storeFactory, commonAnalytics = get()).provide()
     }
 
     override val model: Value<Leaderboards.Model> = store.asValue().map { state -> stateMapper.toModel(state) }

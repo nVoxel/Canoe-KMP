@@ -8,6 +8,8 @@ import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.voxeldev.canoe.projects.list.ProjectsList.Model
 import com.voxeldev.canoe.projects.list.ProjectsList.Output
 import com.voxeldev.canoe.utils.extensions.asValue
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 
 /**
  * @author nvoxel
@@ -16,10 +18,10 @@ class ProjectsListComponent(
     componentContext: ComponentContext,
     storeFactory: StoreFactory,
     private val output: (Output) -> Unit,
-) : ProjectsList, ComponentContext by componentContext {
+) : ProjectsList, KoinComponent, ComponentContext by componentContext {
 
     private val store = instanceKeeper.getStore {
-        ProjectsListStoreProvider(storeFactory = storeFactory).provide()
+        ProjectsListStoreProvider(storeFactory = storeFactory, commonAnalytics = get()).provide()
     }
 
     override val model: Value<Model> = store.asValue().map { state ->

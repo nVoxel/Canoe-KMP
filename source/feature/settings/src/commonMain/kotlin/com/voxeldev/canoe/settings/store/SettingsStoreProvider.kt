@@ -10,6 +10,8 @@ import com.voxeldev.canoe.settings.integration.GetAccessTokenFromStorageUseCase
 import com.voxeldev.canoe.settings.integration.RevokeAccessTokenUseCase
 import com.voxeldev.canoe.settings.store.SettingsStore.Intent
 import com.voxeldev.canoe.settings.store.SettingsStore.State
+import com.voxeldev.canoe.utils.analytics.CommonAnalytics
+import com.voxeldev.canoe.utils.analytics.CustomEvent
 import com.voxeldev.canoe.utils.extensions.getMessage
 import com.voxeldev.canoe.utils.integration.BaseUseCase
 import com.voxeldev.canoe.utils.parsers.AuthenticationCodeParser
@@ -21,7 +23,7 @@ internal class SettingsStoreProvider(
     private val storeFactory: StoreFactory,
     private val deepLink: String?,
     private val authenticationCodeParser: AuthenticationCodeParser,
-    // private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics,
+    private val commonAnalytics: CommonAnalytics,
     private val getAccessTokenFromCodeUseCase: GetAccessTokenFromCodeUseCase = GetAccessTokenFromCodeUseCase(),
     private val getAccessTokenFromStorageUseCase: GetAccessTokenFromStorageUseCase = GetAccessTokenFromStorageUseCase(),
     private val revokeAccessTokenUseCase: RevokeAccessTokenUseCase = RevokeAccessTokenUseCase(),
@@ -89,35 +91,31 @@ internal class SettingsStoreProvider(
 
         private fun getAccessTokenFromCode(uri: String) {
             authenticationCodeParser.getAuthenticationCode(uri)?.let { code ->
-                // val trace = Firebase.performance.startTrace(trace = CustomTrace.AuthenticationLoadTrace)
                 dispatch(message = Msg.AccessTokenLoading)
                 getAccessTokenFromCodeUseCase(params = code, scope = scope) { result ->
                     result.fold(
                         onSuccess = {
-                            // firebaseAnalytics.logEvent(event = CustomEvent.Login)
+                            commonAnalytics.logEvent(event = CustomEvent.Login)
                             dispatch(message = Msg.AccessTokenLoaded(isConnected = true))
                             dispatch(message = Msg.CodeDialogVisibilityChanged(isVisible = false))
                         },
                         onFailure = { dispatch(message = Msg.Error(message = it.getMessage())) },
                     )
-                    // .also { trace.stop() }
                 }
             }
         }
 
         private fun revokeAccessToken() {
-            // val trace = Firebase.performance.startTrace(trace = CustomTrace.AuthenticationLoadTrace)
             dispatch(Msg.AccessTokenLoading)
             revokeAccessTokenUseCase(params = BaseUseCase.NoParams, scope = scope) { result ->
                 result
                     .fold(
                         onSuccess = {
-                            // firebaseAnalytics.logEvent(event = CustomEvent.Logout)
+                            commonAnalytics.logEvent(event = CustomEvent.Logout)
                             dispatch(message = Msg.AccessTokenLoaded(isConnected = false))
                         },
                         onFailure = { dispatch(message = Msg.Error(message = it.getMessage())) },
                     )
-                // .also { trace.stop() }
             }
         }
     }

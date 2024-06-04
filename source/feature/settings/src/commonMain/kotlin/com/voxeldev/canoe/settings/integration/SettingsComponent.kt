@@ -15,6 +15,7 @@ import com.voxeldev.canoe.utils.platform.Platform
 import com.voxeldev.canoe.utils.platform.currentPlatform
 import com.voxeldev.canoe.utils.providers.string.StringResourceProvider
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 import org.koin.core.component.inject
 
 /**
@@ -38,6 +39,7 @@ class SettingsComponent(
             storeFactory = storeFactory,
             deepLink = deepLink,
             authenticationCodeParser = authenticationCodeParser,
+            commonAnalytics = get(),
         ).provide()
     }
 

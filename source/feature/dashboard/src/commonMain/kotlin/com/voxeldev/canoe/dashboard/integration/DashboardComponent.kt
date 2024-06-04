@@ -9,6 +9,8 @@ import com.voxeldev.canoe.dashboard.Dashboard
 import com.voxeldev.canoe.dashboard.store.DashboardStore
 import com.voxeldev.canoe.dashboard.store.DashboardStoreProvider
 import com.voxeldev.canoe.utils.extensions.asValue
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 
 /**
  * @author nvoxel
@@ -18,12 +20,16 @@ class DashboardComponent(
     storeFactory: StoreFactory,
     projectName: String? = null,
     private val onCloseCallback: () -> Unit = {},
-) : Dashboard, ComponentContext by componentContext {
+) : Dashboard, KoinComponent, ComponentContext by componentContext {
 
     private val stateMapper: StateMapper = StateMapper()
 
     private val store = instanceKeeper.getStore {
-        DashboardStoreProvider(projectName = projectName, storeFactory = storeFactory).provide()
+        DashboardStoreProvider(
+            projectName = projectName,
+            storeFactory = storeFactory,
+            commonAnalytics = get(),
+        ).provide()
     }
 
     override val model: Value<Dashboard.Model> = store.asValue().map { state -> stateMapper.toModel(state) }
