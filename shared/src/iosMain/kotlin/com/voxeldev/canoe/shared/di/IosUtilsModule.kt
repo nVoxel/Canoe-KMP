@@ -7,6 +7,5 @@ import org.koin.dsl.module
  * @author nvoxel
  */
 internal fun getIosUtilsModule(iosDependencies: IosDependencies) = module {
-
     single<CommonAnalytics> { iosDependencies.commonAnalytics }
 }
